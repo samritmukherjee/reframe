@@ -9,7 +9,7 @@ import {
   type ReactNode,
 } from "react";
 
-type Theme = "light" | "dark" | "high-contrast";
+type Theme = "light" | "dark";
 
 interface ThemeContextValue {
   theme: Theme;
@@ -27,15 +27,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // we just sync React state here so the toggle button shows the right icon.
   useEffect(() => {
     try {
-    const stored = localStorage.getItem("theme") as Theme | null;
-    if (stored === "light" || stored === "dark" || stored === "high-contrast") {
-      setThemeState(stored);
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setThemeState(prefersDark ? "dark" : "light");
-    }
+      const stored = localStorage.getItem("theme") as Theme | null;
+      if (stored === "light" || stored === "dark") {
+        setThemeState(stored);
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        setThemeState(prefersDark ? "dark" : "light");
+      }
     } catch {
       const prefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)"
@@ -62,14 +62,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       } else {
         document.documentElement.classList.remove("dark");
       }
-      if (next === "high-contrast") {
-      document.documentElement.setAttribute(
-        "data-theme",
-        "high-contrast"
-      );
-      } else {
+      // Always remove high-contrast data theme attribute
       document.documentElement.removeAttribute("data-theme");
-      }
       if (persist) {
         localStorage.setItem("theme", next);
       }
@@ -78,13 +72,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 
   const toggleTheme = useCallback(() => {
-    applyTheme(
-      theme === "light"
-        ? "dark"
-        : theme === "dark"
-        ? "high-contrast"
-        : "light"
-    ); 
+    applyTheme(theme === "light" ? "dark" : "light"); 
   }, [theme, applyTheme]);
 
   const setTheme = useCallback(
