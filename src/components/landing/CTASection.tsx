@@ -11,7 +11,7 @@ export default function CTASection() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/3 to-indigo-500/5 -z-10" />
 
       {/* CTA */}
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-10 text-center">
+      <div className="mx-auto w-full max-w-[90%] 2xl:max-w-[1500px] px-6 md:px-10 text-center">
         <h2 className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight text-[var(--text)] mb-8 leading-tight">
           Ready to reframe?
         </h2>

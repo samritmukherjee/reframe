@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute top-0 left-1/4 -z-10 h-[500px] w-[800px] rounded-full bg-blue-500/10 blur-[130px] dark:bg-blue-400/5" />
       <div className="absolute bottom-10 right-1/4 -z-10 h-[450px] w-[700px] rounded-full bg-violet-400/10 blur-[110px] dark:bg-violet-400/4" />
 
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+      <div className="mx-auto w-full max-w-[90%] 2xl:max-w-[1500px] px-6 md:px-10">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-12 items-center">
 
           {/* Left copy */}

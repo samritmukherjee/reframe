@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-4 z-50 mx-auto w-full max-w-7xl px-6 md:px-10">
+    <div className="sticky top-4 z-50 mx-auto w-full max-w-[90%] 2xl:max-w-[1500px] px-6 md:px-10">
       <nav className="flex items-center justify-between rounded-2xl bg-[var(--surface)]/70 backdrop-blur-xl px-6 py-3 shadow-md ring-1 ring-[var(--border)]/60">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">

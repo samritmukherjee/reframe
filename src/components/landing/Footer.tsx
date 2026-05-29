@@ -7,7 +7,7 @@ import BrandLogo from "@/components/BrandLogo";
 export default function Footer() {
   return (
     <footer className="w-full border-t border-[var(--border)] bg-[var(--surface)]/40 backdrop-blur-sm text-[var(--text)] px-6 py-24 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 px-6 md:px-10">
+      <div className="max-w-[90%] 2xl:max-w-[1500px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 px-6 md:px-10">
         
         {/* Brand Section */}
         <div className="md:col-span-6 space-y-10">
@@ -67,7 +67,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="max-w-6xl mx-auto mt-12 pt-8 border-t border-[var(--border)]/30 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[var(--muted)] px-6 md:px-10">
+      <div className="max-w-[90%] 2xl:max-w-[1500px] mx-auto mt-12 pt-8 border-t border-[var(--border)]/30 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-[var(--muted)] px-6 md:px-10">
         <p>© {new Date().getFullYear()} Reframe. Released under the MIT License.</p>
         <p className="flex items-center gap-1.5">
           Built with <FiHeart className="h-4 w-4 text-red-500 fill-red-500" /> for privacy on the web.

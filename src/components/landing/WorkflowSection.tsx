@@ -6,7 +6,7 @@ import { FiFolder, FiSliders, FiDownload } from "react-icons/fi";
 const steps = [
   {
     num: "01",
-    icon: <FiFolder className="h-5 w-5" />,
+    icon: <FiFolder className="h-6 w-6" />,
     title: "Open your video",
     desc: "Drag any file in. It loads straight into browser memory — no upload progress bar.",
     color: "text-blue-500",
@@ -15,7 +15,7 @@ const steps = [
   },
   {
     num: "02",
-    icon: <FiSliders className="h-5 w-5" />,
+    icon: <FiSliders className="h-6 w-6" />,
     title: "Edit & customize",
     desc: "Choose aspect ratios, trim the timeline, adjust speed, or rotate — all with live preview.",
     color: "text-violet-500",
@@ -24,7 +24,7 @@ const steps = [
   },
   {
     num: "03",
-    icon: <FiDownload className="h-5 w-5" />,
+    icon: <FiDownload className="h-6 w-6" />,
     title: "Export & save",
     desc: "FFmpeg WASM renders the final file directly to your downloads folder.",
     color: "text-emerald-500",
@@ -60,7 +60,7 @@ export default function WorkflowSection() {
 
   return (
     <section id="workflow" className="flex flex-col justify-center py-28 relative overflow-hidden">
-      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+      <div className="mx-auto w-full max-w-[90%] 2xl:max-w-[1500px] px-6 md:px-10">
 
         {/* Header */}
         <div className="max-w-2xl mb-16">
@@ -78,13 +78,13 @@ export default function WorkflowSection() {
           {steps.map((step, i) => (
             <div key={i} className="group">
               <div className={`flex items-center gap-3 mb-4`}>
-                <div className={`inline-flex h-10 w-10 items-center justify-center rounded-lg ${step.bg} ${step.color}`}>
+                <div className={`inline-flex h-12 w-12 items-center justify-center rounded-lg ${step.bg} ${step.color}`}>
                   {step.icon}
                 </div>
                 <span className="text-xs font-mono text-[var(--muted)] tracking-widest">Step {step.num}</span>
               </div>
-              <h3 className="text-base font-medium text-[var(--text)] mb-2">{step.title}</h3>
-              <p className="text-xs text-[var(--muted)] leading-relaxed">{step.desc}</p>
+              <h3 className="text-lg font-bold text-[var(--text)] mb-2">{step.title}</h3>
+              <p className="text-sm text-[var(--muted)] leading-relaxed">{step.desc}</p>
               <StepProgress active={visible} />
             </div>
           ))}
