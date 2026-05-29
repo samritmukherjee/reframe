@@ -19,6 +19,16 @@ interface ThemeContextValue {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
+function getCurrentTheme(): Theme {
+  if (
+    typeof document !== "undefined" &&
+    document.documentElement.classList.contains("dark")
+  ) {
+    return "dark";
+  }
+  return "light";
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("light");
 
@@ -71,8 +81,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     []
   );
 
+  useEffect(() => {
+    setThemeState(getCurrentTheme());
+
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        applyTheme(e.matches ? "dark" : "light", false);
+      }
+    };
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [applyTheme]);
+
   const toggleTheme = useCallback(() => {
+<<<<<<< HEAD
     applyTheme(theme === "light" ? "dark" : "light"); 
+=======
+    applyTheme(theme === "light" ? "dark" : "light");
+>>>>>>> upstream/main
   }, [theme, applyTheme]);
 
   const setTheme = useCallback(

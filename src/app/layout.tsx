@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Syne, DM_Sans } from "next/font/google";
+import { Bebas_Neue, Syne, DM_Sans, Inter, Roboto, Poppins, Montserrat } from "next/font/google";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -48,39 +48,28 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function () {
-                try {
-                  var stored = localStorage.getItem('theme');
-                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  var isDark = stored === 'dark' || (!stored && prefersDark);
-                  if (isDark) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
-                  if (stored === 'high-contrast') {
-                    document.documentElement.setAttribute(
-                      'data-theme',
-                      'high-contrast'
-                    );
-                  } else {
-                    document.documentElement.removeAttribute('data-theme');
-                  }  
-                } catch (e) {}
-              })();
-            `,
+            __html: `(function() {
+  try {
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark' || (!theme &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  } catch(e) {}
+})();`,
           }}
         />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
       </head>
       <body className="min-h-screen bg-[var(--bg)] text-[var(--text)] antialiased">
         
       <a href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-black"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-[var(--radius)] focus:border focus:border-[var(--border)] focus:bg-[var(--surface)] focus:px-4 focus:py-2 focus:text-[var(--text)]"
         >
           Skip to main content
         </a>
