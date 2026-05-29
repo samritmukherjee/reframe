@@ -95,11 +95,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [applyTheme]);
 
   const toggleTheme = useCallback(() => {
-<<<<<<< HEAD
-    applyTheme(theme === "light" ? "dark" : "light"); 
-=======
     applyTheme(theme === "light" ? "dark" : "light");
->>>>>>> upstream/main
   }, [theme, applyTheme]);
 
   const setTheme = useCallback(
