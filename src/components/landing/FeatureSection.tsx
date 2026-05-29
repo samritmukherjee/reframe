@@ -52,22 +52,22 @@ export default function FeatureSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section id="features" className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
-      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+    <section id="features" className="flex flex-col justify-center py-28 relative overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
 
         {/* Header */}
-        <div className="max-w-xl mb-14">
-          <p className="text-xs uppercase tracking-widest text-[var(--accent)] mb-3">Capabilities</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text)] leading-tight">
+        <div className="max-w-2xl mb-16">
+          <p className="text-sm uppercase tracking-[0.2em] font-bold text-[var(--accent)] mb-4">Capabilities</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text)] leading-tight">
             Everything you need,<br />running locally.
           </h2>
-          <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed max-w-md">
+          <p className="mt-6 text-lg text-[var(--muted)] leading-relaxed max-w-xl">
             A full video toolkit powered by WebAssembly. Nothing leaves your machine.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <div
               key={i}

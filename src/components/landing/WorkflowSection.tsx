@@ -59,22 +59,22 @@ export default function WorkflowSection() {
   }, []);
 
   return (
-    <section id="workflow" className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
-      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
+    <section id="workflow" className="flex flex-col justify-center py-28 relative overflow-hidden">
+      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
 
         {/* Header */}
-        <div className="max-w-xl mb-14">
-          <p className="text-xs uppercase tracking-widest text-[var(--accent)] mb-3">How it works</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text)] leading-tight">
+        <div className="max-w-2xl mb-16">
+          <p className="text-sm uppercase tracking-[0.2em] font-bold text-[var(--accent)] mb-4">How it works</p>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text)] leading-tight">
             Three steps. No config.
           </h2>
-          <p className="mt-3 text-sm text-[var(--muted)] leading-relaxed max-w-md">
+          <p className="mt-6 text-lg text-[var(--muted)] leading-relaxed max-w-xl">
             From file to export in under a minute — entirely in your browser.
           </p>
         </div>
 
         {/* Steps */}
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {steps.map((step, i) => (
             <div key={i} className="group">
               <div className={`flex items-center gap-3 mb-4`}>

@@ -82,19 +82,19 @@ const trustCards = [
 
 export default function PrivacySection() {
   return (
-    <section id="privacy" className="min-h-screen flex flex-col justify-center py-16 relative overflow-hidden">
+    <section id="privacy" className="flex flex-col justify-center py-28 relative overflow-hidden">
       <div className="absolute right-0 top-1/3 -z-10 h-80 w-80 rounded-full bg-indigo-500/6 blur-[100px]" />
 
-      <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
-        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10 items-start">
+      <div className="mx-auto w-full max-w-7xl px-6 md:px-10">
+        <div className="grid grid-cols-1 gap-20 lg:grid-cols-12 lg:gap-16 items-start">
 
           {/* Left column */}
-          <div className="lg:col-span-5 space-y-5">
-            <p className="text-xs uppercase tracking-widest text-[var(--accent)]">Privacy</p>
-            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-[var(--text)] leading-tight">
+          <div className="lg:col-span-6 space-y-6">
+            <p className="text-sm uppercase tracking-[0.2em] font-bold text-[var(--accent)]">Privacy</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[var(--text)] leading-tight">
               Your videos never leave your device.
             </h2>
-            <p className="text-sm text-[var(--muted)] leading-relaxed">
+            <p className="text-lg text-[var(--muted)] leading-relaxed">
               Most online editors upload gigabytes to their servers. Reframe processes every frame on your machine — saving bandwidth, time, and your peace of mind.
             </p>
 

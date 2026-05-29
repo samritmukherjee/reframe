@@ -8,6 +8,7 @@ import PrivacySection from "./PrivacySection";
 import WorkflowSection from "./WorkflowSection";
 import CTASection from "./CTASection";
 import LoadingScreen from "./LoadingScreen";
+import Footer from "./Footer";
 
 export default function LandingWrapper() {
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,7 @@ export default function LandingWrapper() {
         <WorkflowSection />
         <CTASection />
       </main>
+      <Footer />
     </div>
   );
 }
